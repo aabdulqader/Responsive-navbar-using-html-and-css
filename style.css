@@ -1,0 +1,195 @@
+/* ============ GOOGLE FONT ============ */
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+body {
+  background-repeat: no-repeat;
+  background: linear-gradient(
+    170deg,
+    rgba(214, 28, 160, 1) 0%,
+    rgba(63, 9, 121, 1) 54%,
+    rgba(255, 0, 95, 1) 100%
+  );
+  min-height: 100vh;
+}
+
+/* ============ NAVBAR ============ */
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 80px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px 0 120px;
+}
+nav .brand {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li {
+  margin: 0 8px;
+}
+nav ul li a {
+  color: #f2f2f2;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  bottom: 0;
+  height: 3px;
+  width: 55%;
+  background-color: #ffffff;
+  animation: navlink-bottom 0.5s ease;
+  -webkit-animation: navlink-bottom 0.5s ease;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  display: none;
+}
+nav ul li:hover a::after {
+    display: block;
+ 
+}
+@keyframes navlink-bottom {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 55%;
+  }
+}
+
+/* active link */
+
+nav ul li a.active,
+nav ul li a:hover {
+  color: #ffffff;
+}
+
+nav ul li a.active::after,
+nav ul li a:hover::after {
+  display: block;
+}
+
+nav .menu-btn i {
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  display: none;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+@media (max-width: 1000px) {
+  nav {
+    padding: 0 40px 0 50px;
+  }
+}
+
+/* show menu */
+
+@media (max-width: 920px) {
+  nav .menu-btn i {
+    display: block;
+  }
+  #checkboxClick:checked ~ .menu-btn i:before {
+    content: "\f00d";
+  }
+  nav ul {
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    padding-top: 100px;
+    background: rgb(255, 255, 255);
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #checkboxClick:checked ~ ul {
+    right: 0;
+  }
+  nav ul li {
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a {
+    width: 100%;
+    margin-right: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -ms-transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -o-transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #checkboxClick:checked ~ ul li a {
+    margin-right: 0px;
+  }
+  nav ul li a {
+    color: #000000;
+    font-weight: 700;
+    font-size: 24px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover {
+    background: none;
+    color: #e90162;
+  }
+  nav ul li a.active::after,
+  nav ul li a:hover::after {
+    display: none;
+  }
+}
+
+/* ============ HERO SECTION ============ */
+
+.content {
+  text-align: center;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 30px;
+  color: #fff;
+}
+.content div {
+  font-size: 60px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
